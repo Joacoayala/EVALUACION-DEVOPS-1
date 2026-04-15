@@ -1,0 +1,8 @@
+name: Hola mundo Workflows
+on: [push]
+jobs:
+  saludo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Mostrar mensaje
+        run: echo "se hizo el push al repositorio" 

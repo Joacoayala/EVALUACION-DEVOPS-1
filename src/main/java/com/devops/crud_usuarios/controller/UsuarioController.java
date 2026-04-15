@@ -16,7 +16,7 @@ public class UsuarioController {
     public UsuarioController(UsuarioService usuarioService) {
         this.usuarioService = usuarioService;
     }
-    
+
     @GetMapping
     public List<Usuario> listar() {
         return usuarioService.listar();
@@ -27,6 +27,7 @@ public class UsuarioController {
         return usuarioService.obtenerPorId(id);
     }
 
+    //ESTE METODO CREA UN USUARIO
     @PostMapping
     public Usuario crear(@RequestBody Usuario usuario) {
         return usuarioService.crear(usuario);
@@ -36,7 +37,7 @@ public class UsuarioController {
     public Usuario actualizar(@PathVariable Long id, @RequestBody Usuario usuario) {
         return usuarioService.actualizar(id, usuario);
     }
-    //ESTE METODO ELIMINA TODOS LOS USUARIOS
+
     @DeleteMapping("/{id}")
     public boolean eliminar(@PathVariable Long id) {
         return usuarioService.eliminar(id);
